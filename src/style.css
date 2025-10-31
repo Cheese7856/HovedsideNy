@@ -1,0 +1,228 @@
+:root {
+  --border: 40px;
+  --borderBunn: 0px;
+  --borderKnapp: 10px;
+}
+
+body {
+  font-family: Roboto, sans-serif;
+  text-align: center;
+}
+
+h1 {
+  font-size: min(100px, 9vw);
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
+
+h2 {
+  font-weight: normal;
+  margin-top: 10px;
+  font-size: min(40px, 8vw);
+  opacity: 40%;
+}
+
+h3 {
+  width: 80%;
+  margin: 10px auto;
+  font-size: 40px;
+  margin-bottom: 5px;
+
+  border-bottom: 2px solid;
+}
+
+#private {
+  background-color: hsl(0, 90%, 61%);
+}
+
+#public {
+  background-color: hsl(120, 90%, 61%);
+}
+
+ul {
+  list-style-type: none; /* Fjerner dottene */
+  padding: 0; /* Fjerner innrykk */
+  margin-top: 20px;
+
+  text-align: center;
+  font-size: 20px;
+}
+
+li {
+  margin-bottom: 20px;
+}
+
+table {
+  table-layout: fixed;
+  width: 90%;
+  margin: 0 auto;
+}
+
+a {
+  padding: 10px;
+
+  width: min-content(35%, 20px);
+  height: 27px;
+
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+
+  color: white;
+  background-color: hsl(226, 63%, 60%);
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 17px;
+
+  position: absolute;
+  bottom: 25px;
+  margin: 0 auto;
+  left: 50%;
+  transform: translateX(-50%);
+
+  transition: 0.3s;
+
+  border-radius: var(--borderKnapp);
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+a:hover {
+  background-color: hsl(226, 70%, 50%);
+}
+
+.container {
+  display: flex;
+  gap: 30px;
+  justify-content: space-around;
+  margin: 0 30px;
+}
+
+.banner {
+  width: 100%;
+  aspect-ratio: 3/1;
+
+  border-radius: var(--border);
+  border-bottom-left-radius: var(--borderBunn);
+  border-bottom-right-radius: var(--borderBunn);
+
+  object-fit: cover;
+  object-position: 0 25%;
+}
+
+.card {
+  background-color: white;
+  margin: 0 auto;
+  /* min-height: 400px; */
+  position: relative;
+
+  border-radius: var(--border);
+
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  /* padding: 10px; */
+  flex: 1;
+
+  padding-bottom: 70px;
+}
+
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: rgb(209, 220, 255);
+  color: rgb(43, 43, 43);
+  font-weight: bold;
+  text-align: center;
+}
+
+@media (max-width: 600px) {
+  .container {
+    flex-direction: column;
+  }
+  .footer {
+    position: block;
+  }
+}
+
+/* Kilde: https://uiverse.io/PriyanshuGupta28/brave-mole-100 */
+
+/* From Uiverse.io by PriyanshuGupta28 */
+.pushable {
+  position: relative;
+  background: transparent;
+  padding: 0px;
+  border: none;
+  cursor: pointer;
+  outline-offset: 4px;
+  outline-color: deeppink;
+  transition: filter 250ms;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+.shadow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: hsl(226, 25%, 69%);
+  border-radius: 8px;
+  filter: blur(2px);
+  will-change: transform;
+  transform: translateY(2px);
+  transition: transform 600ms cubic-bezier(0.3, 0.7, 0.4, 1);
+}
+
+.edge {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  border-radius: 8px;
+  background: linear-gradient(to right, hsl(248, 39%, 39%) 0%, hsl(248, 39%, 49%) 8%, hsl(248, 39%, 39%) 92%, hsl(248, 39%, 29%) 100%);
+}
+
+.front {
+  display: block;
+  position: relative;
+  border-radius: 8px;
+  background: hsl(248, 53%, 58%);
+  padding: 16px 32px;
+  color: white;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  font-size: 1rem;
+  transform: translateY(-4px);
+  transition: transform 600ms cubic-bezier(0.3, 0.7, 0.4, 1);
+}
+
+.pushable:hover {
+  filter: brightness(110%);
+}
+
+.pushable:hover .front {
+  transform: translateY(-6px);
+  transition: transform 250ms cubic-bezier(0.3, 0.7, 0.4, 1.5);
+}
+
+.pushable:active .front {
+  transform: translateY(-2px);
+  transition: transform 34ms;
+}
+
+.pushable:hover .shadow {
+  transform: translateY(4px);
+  transition: transform 250ms cubic-bezier(0.3, 0.7, 0.4, 1.5);
+}
+
+.pushable:active .shadow {
+  transform: translateY(1px);
+  transition: transform 34ms;
+}
+
+.pushable:focus:not(:focus-visible) {
+  outline: none;
+}
