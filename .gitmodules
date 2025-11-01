@@ -1,0 +1,9 @@
+[submodule "timerV3"]
+	path = timerV3
+	url = https://github.com/Cheese7856/timerV3.git
+[submodule "Embed"]
+	path = Embed
+	url = https://github.com/Cheese7856/Embed.git
+[submodule "ukeplaner"]
+	path = ukeplaner
+	url = https://github.com/Cheese7856/ukeplanerServer.git
