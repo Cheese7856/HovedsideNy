@@ -1,5 +1,5 @@
 :root {
-  --border: 40px;
+  --border: 20px;
   --borderBunn: 0px;
   --borderKnapp: 10px;
 }
@@ -107,7 +107,7 @@ a:hover {
   border-bottom-right-radius: var(--borderBunn);
 
   object-fit: cover;
-  object-position: 0 25%;
+  object-position: 0 50%;
 }
 
 .card {
