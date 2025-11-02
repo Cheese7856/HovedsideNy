@@ -2,6 +2,8 @@
   --border: 20px;
   --borderBunn: 0px;
   --borderKnapp: 10px;
+
+  --blå-farge: hsl(226, 68%, 61%);
 }
 
 body {
@@ -56,39 +58,6 @@ table {
   table-layout: fixed;
   width: 90%;
   margin: 0 auto;
-}
-
-a {
-  padding: 10px;
-
-  width: min-content(35%, 20px);
-  height: 27px;
-
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-
-  color: white;
-  background-color: hsl(226, 63%, 60%);
-  text-decoration: none;
-  font-weight: bold;
-  font-size: 17px;
-
-  position: absolute;
-  bottom: 25px;
-  margin: 0 auto;
-  left: 50%;
-  transform: translateX(-50%);
-
-  transition: 0.3s;
-
-  border-radius: var(--borderKnapp);
-
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-}
-
-a:hover {
-  background-color: hsl(226, 70%, 50%);
 }
 
 .container {
@@ -225,4 +194,56 @@ a:hover {
 
 .pushable:focus:not(:focus-visible) {
   outline: none;
+}
+
+a {
+  align-items: center;
+  appearance: none;
+  background-color: var(--blå-farge);
+  border: 0;
+  border-radius: 6px;
+  /*box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, rgba(58, 65, 111, 0.5) 0 -3px 0 inset;*/
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-flex;
+  font-family: "Inter var", ui-sans-serif, system-ui, -apple-system, system-ui, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+    "Segoe UI Symbol", "Noto Color Emoji";
+  font-weight: 600;
+  height: 48px;
+  justify-content: center;
+  line-height: 1;
+  list-style: none;
+  overflow: hidden;
+  padding-left: 16px;
+  padding-right: 16px;
+  position: relative;
+  text-align: left;
+  text-decoration: none;
+  transition: box-shadow 0.15s, transform 0.15s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+  will-change: box-shadow, transform;
+  font-size: 18px;
+}
+
+a:hover {
+  box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #3c4fe0 0 -3px 0 inset;
+  transform: translate(-50%, -2px);
+  /* transform: translateY(-2px); */
+}
+
+a:active {
+  box-shadow: #3c4fe0 0 3px 7px inset;
+  transform: translate(-50%, 2px);
+  /* transform: translateY(2px); */
+}
+
+a {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
 }
